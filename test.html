@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kofuku Hanım'ın Testi 💕</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="test-container">
+
+        <!-- SORU 1 -->
+
+        <section id="question1" class="question-card">
+
+            <div class="question-number">
+                Soru 1 / 2
+            </div>
+
+            <h1>İlk dışarıda buluşmamız neredeydi? 💭</h1>
+
+            <div class="options">
+
+                <button class="option" onclick="answerQuestion(1)">
+                    1 - Beşiktaş
+                </button>
+
+                <button class="option" onclick="answerQuestion(2)">
+                    2 - Nişantaşı
+                </button>
+
+                <button class="option" onclick="answerQuestion(3)">
+                    3 - Nişantaşı Üniversitesi
+                </button>
+
+            </div>
+
+            <p id="question1Result"></p>
+
+        </section>
+
+
+        <!-- SORU 2 -->
+
+        <section id="question2" class="question-card hidden">
+
+            <div class="question-number">
+                Soru 2 / 2
+            </div>
+
+            <h1>Beni ne kadar seviyorsun? ❤️</h1>
+
+            <p class="love-description">
+                Çubuğu parmağınla hareket ettir<br>
+                ve sevgini göster bakalım... 👀
+            </p>
+
+
+            <!-- HIZ GÖSTERGESİ -->
+
+            <div class="gauge">
+
+                <div class="gauge-arc"></div>
+
+                <div class="gauge-labels">
+
+                    <span>Sevmiyorum</span>
+                    <span>Biraz<br>seviyorum</span>
+                    <span>Seviyorum</span>
+                    <span>Seni çok<br>seviyorum ❤️</span>
+
+                </div>
+
+                <div id="needle"></div>
+
+                <div id="handle"></div>
+
+            </div>
+
+
+            <!-- SÜRÜKLEME ALANI -->
+
+            <div class="slider-container">
+
+                <input
+                    type="range"
+                    id="loveSlider"
+                    min="0"
+                    max="3"
+                    step="0.01"
+                    value="0"
+                >
+
+            </div>
+
+            <div id="loveResult" class="love-result">
+                Sevmiyorum
+            </div>
+
+            <button
+                id="finishButton"
+                class="finish-button"
+                onclick="finishTest()">
+
+                Cevabımı verdim 💗
+
+            </button>
+
+        </section>
+
+
+        <!-- SONUÇ -->
+
+        <section id="result" class="gift-screen hidden">
+
+    <div class="confetti-container" id="confetti"></div>
+
+    <div class="gift-content">
+
+        <div class="heart">💗</div>
+
+        <h1>Tebrikler! 🎉</h1>
+
+        <p>İşte hediyen... 💕</p>
+
+        <div class="gift-box" id="giftBox" onclick="openGift()">
+
+            <div class="gift-lid">
+                <div class="ribbon"></div>
+            </div>
+
+            <div class="gift-body">
+                <div class="ribbon"></div>
+            </div>
+
+        </div>
+
+        <p class="gift-hint">
+            🎁 Hediyeni açmak için kutuya dokun
+        </p>
+
+    </div>
+
+
+    <!-- KUTU AÇILDIKTAN SONRA ÇIKACAK FOTOĞRAF -->
+
+    <div id="giftPhoto" class="gift-photo hidden">
+
+        <h2>Sana bir şey hazırladım... ❤️</h2>
+
+        <img src="hediye.jpg" alt="Hediyen">
+
+        <p>Seni her uzağa gittiğinde çok özlicek bir beyfendi ve almak zorundasın çünkü doğru cevap verdin :p</p>
+
+    </div>
+
+</section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,892 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffb6d5, #ff8fbd);
+    overflow: hidden;
+}
+
+/* Ana alan */
+
+.welcome-container {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* Beyaz/pembe kart */
+
+.card {
+    width: 100%;
+    max-width: 420px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    padding: 45px 25px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(160, 40, 90, 0.25);
+
+    animation: cardAppear 1s ease;
+}
+
+/* Kalp */
+
+.heart {
+    font-size: 55px;
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+/* Başlık */
+
+h1 {
+    color: #d63384;
+    font-size: 30px;
+    line-height: 1.3;
+
+    margin-bottom: 20px;
+}
+
+/* Açıklama */
+
+p {
+    color: #777;
+    font-size: 18px;
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+}
+
+/* Buton */
+
+button {
+    border: none;
+
+    background: #e75491;
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(215, 65, 125, 0.3);
+
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #d94381;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Uçuşan kalpler */
+
+.hearts span {
+    position: absolute;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 30px;
+
+    animation: float 8s linear infinite;
+}
+
+.hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(3) {
+    left: 45%;
+    animation-delay: 4s;
+}
+
+.hearts span:nth-child(4) {
+    left: 65%;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(5) {
+    left: 80%;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(6) {
+    left: 90%;
+    animation-delay: 5s;
+}
+
+/* Animasyonlar */
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+}
+
+/* Küçük telefonlar */
+
+@media (max-width: 380px) {
+
+    .card {
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 14px 30px;
+    }
+}
+
+/* ========================= */
+/* TEST SAYFASI */
+/* ========================= */
+
+.test-container {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.question-card {
+    width: 100%;
+    max-width: 430px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 30px;
+
+    padding: 35px 22px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(160, 40, 90, 0.25);
+
+    animation: cardAppear 0.6s ease;
+}
+
+.question-number {
+    color: #e75491;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.question-card h1 {
+    font-size: 25px;
+
+    margin-bottom: 30px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.option {
+    width: 100%;
+
+    background: #fff;
+    color: #d63384;
+
+    border: 2px solid #f3a3c4;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.option:hover {
+    background: #ffe4ef;
+
+    transform: translateY(-2px);
+}
+
+.option:active {
+    transform: scale(0.97);
+}
+
+#question1Result {
+    min-height: 25px;
+
+    margin-top: 20px;
+
+    color: #d63384;
+
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ========================= */
+/* AŞK GÖSTERGESİ */
+/* ========================= */
+
+.love-description {
+    color: #777;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+}
+
+
+/* Gösterge */
+
+.gauge {
+    position: relative;
+
+    width: 330px;
+    height: 190px;
+
+    margin: 20px auto 0;
+
+    overflow: hidden;
+}
+
+
+/* Yarım daire */
+
+.gauge-arc {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: 15px;
+    top: 25px;
+
+    border-radius: 50%;
+
+    border: 25px solid #f5b3cc;
+
+    border-bottom-color: transparent;
+    border-left-color: #f8c3d8;
+    border-right-color: #e879a7;
+
+    transform: rotate(180deg);
+}
+
+
+/* İbre */
+
+#needle {
+    position: absolute;
+
+    width: 5px;
+    height: 125px;
+
+    background: #d63384;
+
+    left: 162px;
+    top: 42px;
+
+    transform-origin: bottom center;
+
+    transform: rotate(-90deg);
+
+    border-radius: 10px;
+
+    transition: transform 0.15s ease;
+
+    z-index: 5;
+}
+
+
+/* İbrenin ortası */
+
+#handle {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    background: #d63384;
+
+    border: 5px solid white;
+
+    border-radius: 50%;
+
+    left: 150px;
+    top: 155px;
+
+    z-index: 6;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+
+/* Yazılar */
+
+.gauge-labels span {
+    position: absolute;
+
+    color: #777;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    line-height: 1.2;
+
+    z-index: 10;
+}
+
+.gauge-labels span:nth-child(1) {
+    left: 0;
+    bottom: 5px;
+
+    width: 70px;
+}
+
+.gauge-labels span:nth-child(2) {
+    left: 75px;
+    top: 55px;
+
+    width: 70px;
+}
+
+.gauge-labels span:nth-child(3) {
+    right: 70px;
+    top: 55px;
+
+    width: 70px;
+}
+
+.gauge-labels span:nth-child(4) {
+    right: -2px;
+    bottom: 5px;
+
+    width: 75px;
+}
+
+
+/* Slider */
+
+.slider-container {
+    width: 100%;
+
+    margin-top: -5px;
+}
+
+#loveSlider {
+    width: 100%;
+
+    height: 35px;
+
+    appearance: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* Slider çizgisi */
+
+#loveSlider::-webkit-slider-runnable-track {
+    height: 8px;
+
+    background: #f3a3c4;
+
+    border-radius: 10px;
+}
+
+
+/* Slider topuzu */
+
+#loveSlider::-webkit-slider-thumb {
+    appearance: none;
+
+    width: 28px;
+    height: 28px;
+
+    margin-top: -10px;
+
+    border-radius: 50%;
+
+    background: #d63384;
+
+    border: 4px solid white;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+
+/* Sonuç yazısı */
+
+.love-result {
+    margin-top: 15px;
+
+    color: #d63384;
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+
+/* Bitir butonu */
+
+.finish-button {
+    margin-top: 25px;
+
+    border: none;
+
+    background: #e75491;
+
+    color: white;
+
+    padding: 15px 25px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 7px 18px rgba(215, 65, 125, 0.3);
+}
+
+
+/* Küçük telefonlar */
+
+@media (max-width: 380px) {
+
+    .question-card {
+        padding: 30px 17px;
+    }
+
+    .question-card h1 {
+        font-size: 22px;
+    }
+
+    .gauge {
+        transform: scale(0.9);
+
+        margin-top: 5px;
+        margin-bottom: -5px;
+    }
+
+}
+
+/* ========================= */
+/* HEDİYE EKRANI */
+/* ========================= */
+
+.gift-screen {
+    position: relative;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.gift-content {
+    position: relative;
+    z-index: 5;
+
+    animation: cardAppear 0.8s ease;
+}
+
+.gift-content h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.gift-content p {
+    margin-bottom: 30px;
+}
+
+
+/* ========================= */
+/* HEDİYE KUTUSU */
+/* ========================= */
+
+.gift-box {
+    position: relative;
+
+    width: 180px;
+    height: 145px;
+
+    margin: 30px auto;
+
+    cursor: pointer;
+
+    animation: giftBounce 2s infinite;
+
+    transition: transform 0.3s;
+}
+
+.gift-box:hover {
+    transform: scale(1.05);
+}
+
+
+/* Kutunun gövdesi */
+
+.gift-body {
+    position: absolute;
+
+    width: 150px;
+    height: 105px;
+
+    left: 15px;
+    bottom: 0;
+
+    background: #e75491;
+
+    border-radius: 5px 5px 12px 12px;
+
+    box-shadow: 0 10px 20px rgba(160, 40, 90, 0.25);
+}
+
+
+/* Kutu kapağı */
+
+.gift-lid {
+    position: absolute;
+
+    width: 180px;
+    height: 42px;
+
+    left: 0;
+    top: 15px;
+
+    background: #d63384;
+
+    border-radius: 8px;
+
+    z-index: 3;
+
+    box-shadow: 0 5px 10px rgba(160, 40, 90, 0.25);
+}
+
+
+/* Kurdele */
+
+.ribbon {
+    position: absolute;
+
+    width: 25px;
+    height: 100%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #ffd1e2;
+}
+
+
+/* Kapaktaki yatay kurdele */
+
+.gift-lid::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 10px;
+
+    top: 16px;
+    left: 0;
+
+    background: #ffd1e2;
+}
+
+
+/* Hafif zıplama */
+
+@keyframes giftBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* ========================= */
+/* HEDİYE AÇILMA ANİMASYONU */
+/* ========================= */
+
+.gift-box.opened {
+    animation: none;
+}
+
+.gift-box.opened .gift-lid {
+    animation: lidOpen 1s forwards;
+}
+
+.gift-box.opened .gift-body {
+    animation: boxOpen 0.7s forwards;
+}
+
+
+@keyframes lidOpen {
+
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    100% {
+        transform: translateY(-100px) rotate(-15deg);
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes boxOpen {
+
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+
+}
+
+
+/* ========================= */
+/* FOTOĞRAF */
+/* ========================= */
+
+.gift-photo {
+    position: absolute;
+
+    z-index: 20;
+
+    width: 90%;
+    max-width: 400px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 25px;
+
+    box-shadow: 0 20px 50px rgba(160, 40, 90, 0.35);
+
+    animation: photoAppear 1s ease;
+}
+
+.gift-photo h2 {
+    color: #d63384;
+
+    font-size: 22px;
+
+    margin-bottom: 20px;
+}
+
+.gift-photo img {
+    display: block;
+
+    width: 100%;
+    max-height: 55vh;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    margin: 0 auto 20px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.gift-photo p {
+    color: #d63384;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.5) translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+/* ========================= */
+/* KONFETİ */
+/* ========================= */
+
+.confetti {
+    position: absolute;
+
+    width: 10px;
+    height: 16px;
+
+    top: 45%;
+
+    z-index: 15;
+
+    animation: confettiFall 2.5s ease-out forwards;
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(var(--x), var(--y))
+            rotate(720deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+.gift-hint {
+    font-size: 14px !important;
+
+    color: #999;
+
+    margin-top: 10px !important;
+}
+
+
+/* Mobil */
+
+@media (max-width: 380px) {
+
+    .gift-box {
+        transform: scale(0.9);
+    }
+
+    .gift-content h1 {
+        font-size: 28px;
+    }
+
+}
